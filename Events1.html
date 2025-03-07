@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date & Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        #datetime {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click the Button to Get Current Date & Time</h2>
+    <button id="showTimeBtn">Show Date & Time</button>
+    <p id="datetime"></p>
+
+    <script>
+        // Select the button and paragraph element
+        document.getElementById("showTimeBtn").addEventListener("click", function() {
+            // Get the current date and time
+            let now = new Date();
+            let formattedDate = now.toLocaleString(); // Format date & time
+            // Display in paragraph
+            document.getElementById("datetime").textContent = "Current Date & Time: " + formattedDate;
+        });
+    </script>
+
+</body>
+
+</html>

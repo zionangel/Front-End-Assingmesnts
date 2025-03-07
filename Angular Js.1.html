@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression Evaluator with Color Change</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .input-box {
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            padding: 5px;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body ng-controller="myCtrl">
+
+    <h2>AngularJS Expression Evaluator</h2>
+
+    <!-- Input Box for Color -->
+    <input type="text" ng-model="color" placeholder="Enter a color" class="input-box" ng-style="{'background-color': color}">
+
+    <p>Entered Color: {{ color }}</p>
+
+    <!-- Expression Evaluation -->
+    <h3>Expression Evaluation:</h3>
+    <p>2 + 3 = {{ 2 + 3 }}</p>
+    <p>Square of 4 = {{ 4 * 4 }}</p>
+    <p>Entered Text in Uppercase: {{ color | uppercase }}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.color = "";
+        });
+    </script>
+
+</body>
+
+</html>

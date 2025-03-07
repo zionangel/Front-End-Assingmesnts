@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Filters Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <!-- Linking JavaScript file -->
+</head>
+
+<body ng-controller="myController">
+
+    <h2>AngularJS Filters Example</h2>
+
+    <p><strong>Current Date:</strong> {{ today | date:'fullDate' }}</p>
+    <p><strong>Uppercase:</strong> {{ message | uppercase }}</p>
+    <p><strong>Lowercase:</strong> {{ message | lowercase }}</p>
+    <p><strong>Number Format:</strong> {{ amount | number:2 }}</p>
+    <p><strong>Reversed Text:</strong> {{ message | reverseText }}</p>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS ng-show, ng-hide, ng-disabled</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="DemoController">
+
+    <h2>AngularJS Directives: ng-show, ng-hide, ng-disabled</h2>
+
+    <!-- ✅ Input Field to Toggle Visibility -->
+    <input type="text" ng-model="inputText" placeholder="Type something...">
+    <button ng-click="toggle()">Toggle Visibility</button>
+
+    <!-- ✅ ng-show Example (Visible when `isVisible` is true) -->
+    <p ng-show="isVisible">This paragraph is visible when isVisible is true.</p>
+
+    <!-- ✅ ng-hide Example (Hidden when `isVisible` is true) -->
+    <p ng-hide="isVisible">This paragraph is hidden when isVisible is true.</p>
+
+    <!-- ✅ ng-disabled Example -->
+    <button ng-disabled="inputText.length < 5">Submit (Disabled if input < 5 characters)</button>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("DemoController", function($scope) {
+            $scope.isVisible = true; // Default visibility
+
+            $scope.toggle = function() {
+                $scope.isVisible = !$scope.isVisible;
+            };
+        });
+    </script>
+
+</body>
+
+</html>

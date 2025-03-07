@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="FirstController">
+        <h2>First Controller</h2>
+        <p>Local Scope: {{ message }}</p>
+        <p>Global Scope: {{ globalMessage }}</p>
+        <button ng-click="changeGlobal()">Change Global Message</button>
+    </div>
+
+    <div ng-controller="SecondController">
+        <h2>Second Controller</h2>
+        <p>Global Scope: {{ globalMessage }}</p>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.run(function($rootScope) {
+            $rootScope.globalMessage = "Hello from $rootScope!";
+        });
+
+        app.controller("FirstController", function($scope, $rootScope) {
+            $scope.message = "Hello from $scope!";
+
+            $scope.changeGlobal = function() {
+                $rootScope.globalMessage = "Global message changed!";
+            };
+        });
+
+        app.controller("SecondController", function($scope, $rootScope) {
+            $scope.globalMessage = $rootScope.globalMessage;
+        });
+    </script>
+
+</body>
+
+</html>

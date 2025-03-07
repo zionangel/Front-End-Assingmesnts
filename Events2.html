@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        #error {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JavaScript Form Validation</h2>
+    <form id="myForm">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+        <p id="error"></p>
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            let name = document.getElementById("nameInput").value.trim();
+            let errorMsg = document.getElementById("error");
+
+            if (name === "") {
+                errorMsg.textContent = "Error: Name cannot be empty!";
+                event.preventDefault(); // Prevents form submission
+            } else {
+                errorMsg.textContent = ""; // Clears error message
+                alert("Form submitted successfully!"); // Simulate successful submission
+            }
+        });
+    </script>
+
+</body>
+
+</html>

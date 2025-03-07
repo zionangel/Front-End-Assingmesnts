@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Data Binding Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .box {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body ng-controller="myController" ng-init="students=[{name:'John', age:22}, {name:'Sara', age:21}, {name:'Mike', age:23}]">
+
+    <h2>AngularJS Data Binding and Directives</h2>
+
+    <!-- Using ng-model for Two-Way Data Binding -->
+    <label>Enter Name: </label>
+    <input type="text" ng-model="userName">
+    <p>Welcome, {{ userName }}!</p>
+
+    <!-- Using ng-repeat to iterate over a list -->
+    <h3>Student List:</h3>
+    <ul>
+        <li ng-repeat="student in students">
+            {{ student.name }} - Age: {{ student.age }}
+        </li>
+    </ul>
+
+    <!-- Using ng-include to load an external file -->
+    <div ng-include="'student-list.html'"></div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function($scope) {
+            $scope.userName = "Guest"; // Default value for ng-model
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Routing</title>
+
+    <!-- Include AngularJS & Angular Route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        
+        nav {
+            background: blue;
+            padding: 10px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body ng-controller="mainController">
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#!home">Home</a>
+        <a href="#!about">About</a>
+        <a href="#!contact">Contact</a>
+    </nav>
+
+    <!-- Dynamic Content Here -->
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+
+    <script>
+        // Define AngularJS App with ngRoute
+        var app = angular.module("myApp", ["ngRoute"]);
+
+        // Configure Routing
+        app.config(function($routeProvider) {
+            $routeProvider
+                .when("/home", {
+                    template: "<h2>🏠 Welcome to the Home Page</h2><p>This is the home content.</p>"
+                })
+                .when("/about", {
+                    template: "<h2>📖 About Us</h2><p>This is the about page.</p>"
+                })
+                .when("/contact", {
+                    template: "<h2>📞 Contact Us</h2><p>Email: contact@example.com</p>"
+                })
+                .otherwise({
+                    template: "<h2>❌ Page Not Found</h2><p>The requested page does not exist.</p>"
+                });
+        });
+
+        // Main Controller
+        app.controller("mainController", function($scope) {
+            console.log("AngularJS Routing Initialized");
+        });
+    </script>
+
+</body>
+
+</html>

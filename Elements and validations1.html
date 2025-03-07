@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        
+        .form-container {
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>📌 Responsive Form</h2>
+
+        <!-- ✅ Textbox -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <!-- ✅ Select Box -->
+        <label for="gender">Select Gender:</label>
+        <select id="gender">
+            <option value="">-- Select --</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- ✅ Checkbox -->
+        <label>Choose your Hobbies:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="hobby" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobby" value="music"> Music</label>
+            <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+        </div>
+
+        <!-- ✅ Radio Button -->
+        <label>Are you a Student?</label>
+        <div class="radio-group">
+            <label><input type="radio" name="student" value="yes"> Yes</label>
+            <label><input type="radio" name="student" value="no"> No</label>
+        </div>
+
+        <!-- ✅ Submit Button -->
+        <button type="submit">Submit</button>
+    </div>
+
+</body>
+
+</html>

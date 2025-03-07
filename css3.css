@@ -1,0 +1,22 @@
+/* Styling the container with different border styles */
+
+.border-box {
+    width: 400px;
+    height: 200px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightyellow;
+    /* Background color for visibility */
+    /* Setting different borders for each side */
+    border-top: 5px solid red;
+    /* Solid red border on top */
+    border-right: 5px dashed blue;
+    /* Dashed blue border on right */
+    border-bottom: 5px dotted green;
+    /* Dotted green border at bottom */
+    border-left: 5px double black;
+    /* Double black border on left */
+}

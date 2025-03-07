@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS API Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="myController">
+
+    <h2>AngularJS API Methods Example</h2>
+
+    <!-- Input Text -->
+    <p><strong>Original Text:</strong> {{ inputText }}</p>
+
+    <!-- Buttons to Apply API Methods -->
+    <button ng-click="toLowerCase()">Convert to Lowercase</button>
+    <p><strong>

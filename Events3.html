@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console.log() Debugging</title>
+</head>
+
+<body>
+
+    <h2>Open Console (F12 → Console) to See Debugging Output</h2>
+    <button onclick="debugExample()">Run Debugging</button>
+
+    <script>
+        function debugExample() {
+            console.log("🚀 Debugging Started...");
+
+            // 1️⃣ Logging Variables
+            let x = 10,
+                y = 20;
+            console.log("x:", x, "y:", y);
+            console.log("Sum:", x + y);
+
+            // 2️⃣ Logging Functions
+            function multiply(a, b) {
+                console.log(`Multiplying ${a} * ${b}`);
+                return a * b;
+            }
+            console.log("Multiplication Result:", multiply(4, 5));
+
+            // 3️⃣ Logging Loops
+            for (let i = 0; i < 3; i++) {
+                console.log("Loop iteration:", i);
+            }
+
+            // 4️⃣ Logging Objects & Arrays
+            let user = {
+                name: "Zion",
+                age: 22
+            };
+            console.log("User Object:", user);
+            console.table(user);
+
+            let numbers = [10, 20, 30, 40];
+            console.log("Numbers Array:", numbers);
+            console.table(numbers);
+
+            // 5️⃣ Logging Errors
+            try {
+                let result = 10 / 0;
+                console.log("Division Result:", result);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+
+            // 6️⃣ Warnings & Info
+            console.warn("⚠️ Warning: This is a warning message!");
+            console.info("ℹ️ Info: Everything is working fine.");
+
+            // 7️⃣ Grouping Logs
+            console.group("Grouped Logs");
+            console.log("User: Zion");
+            console.log("Status: Active");
+            console.groupEnd();
+
+            console.log("✅ Debugging Completed.");
+        }
+    </script>
+
+</body>
+
+</html>

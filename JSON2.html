@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Select Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MainController">
+
+    <h2>Using ng-options</h2>
+    <select ng-model="selectedOption1" ng-options="item for item in options">
+        <option value="">-- Select an Option --</option>
+    </select>
+    <p>Selected Value: {{ selectedOption1 }}</p>
+
+    <h2>Using ng-repeat</h2>
+    <select ng-model="selectedOption2">
+        <option value="">-- Select an Option --</option>
+        <option ng-repeat="item in options" value="{{ item }}">{{ item }}</option>
+    </select>
+    <p>Selected Value: {{ selectedOption2 }}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("MainController", function($scope) {
+            $scope.options = ["Apple", "Banana", "Cherry", "Mango"];
+        });
+    </script>
+
+</body>
+
+</html>

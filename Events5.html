@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Access using Dot Notation</title>
+</head>
+
+<body>
+
+    <h2>JSON Object Access using Dot Notation</h2>
+    <button onclick="showDetails()">Show JSON Data</button>
+
+    <script>
+        // ✅ Create a JSON Object
+        let person = {
+            name: "Zion Angel",
+            age: 22,
+            city: "Andhra Pradesh",
+            skills: {
+                programming: "Java, Python",
+                database: "MySQL"
+            }
+        };
+
+        // ✅ Function to Access and Display JSON Data
+        function showDetails() {
+            let output = `Name: ${person.name}\n`;
+            output += `Age: ${person.age}\n`;
+            output += `City: ${person.city}\n`;
+            output += `Programming Skills: ${person.skills.programming}\n`;
+            output += `Database: ${person.skills.database}`;
+
+            alert(output); // Display data in an alert box
+        }
+    </script>
+
+</body>
+
+</html>

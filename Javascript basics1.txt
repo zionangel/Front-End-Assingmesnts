@@ -1,0 +1,15 @@
+
+// This is a single-line comment in JavaScript
+
+/*
+This is a multi-line comment.
+It spans multiple lines and is often used for documentation.
+*/
+
+// Program to add two numbers
+let num1 = 10; // First number
+let num2 = 20; // Second number
+
+let result = num1 + num2; // Adding two numbers
+
+console.log("The sum is:", result); // Display the result

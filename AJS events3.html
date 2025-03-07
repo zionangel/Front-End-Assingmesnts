@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Event Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body ng-controller="EventController">
+
+    <h2>AngularJS Event Handling</h2>
+
+    <!-- ✅ ng-click Example -->
+    <button ng-click="handleClick($event)">Click Me</button>
+    <p>{{ clickMessage }}</p>
+
+    <!-- ✅ ng-mousemove Example -->
+    <div class="box" ng-mousemove="handleMouseMove($event)">
+        Move your mouse here!
+    </div>
+    <p>Mouse Position: X={{ mouseX }}, Y={{ mouseY }}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("EventController", function($scope) {
+            // ✅ ng-click event handler
+            $scope.handleClick = function($event) {
+                $scope.clickMessage = "Button clicked at X: " + $event.clientX + ", Y: " + $event.clientY;
+            };
+
+            // ✅ ng-mousemove event handler
+            $scope.handleMouseMove = function($event) {
+                $scope.mouseX = $event.clientX;
+                $scope.mouseY = $event.clientY;
+            };
+        });
+    </script>
+
+</body>
+
+</html>

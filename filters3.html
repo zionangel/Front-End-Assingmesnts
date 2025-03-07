@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS HTTP Methods Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="myController">
+
+    <h2>AngularJS $http Methods Example</h2>
+
+    <!-- GET Request -->
+    <button ng-click="getData()">Fetch Data (GET)</button>
+    <div ng-if="getResponse">
+        <h3>GET Response:</h3>
+        <p><strong>Title:</strong> {{ getResponse.title }}</p>
+        <p><strong>Body:</strong> {{ getResponse.body }}</p>
+        <p><strong>Status Code:</strong> {{ getStatus }}</p>
+        <p><strong>Config:</strong> {{ getConfig | json }}</p>
+    </div>
+
+    <hr>
+
+    <!-- POST Request -->
+    <button ng-click="postData()">Send Data (POST)</button>
+    <div ng-if="postResponse">
+        <h3>POST Response:</h3>
+        <p><strong>Title:</strong> {{ postResponse.title }}</p>
+        <p><strong>Body:</strong> {{ postResponse.body }}</p>
+        <p><strong>User ID:</strong> {{ postResponse.userId }}</p>
+        <p><strong>Status Code:</strong> {{ postStatus }}</p>
+        <p><strong>Config:</strong> {{ postConfig | json }}</p>
+    </div>
+
+</body>
+
+</html>

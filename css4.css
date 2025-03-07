@@ -1,0 +1,40 @@
+/* Styling the container */
+
+.container {
+    width: 80%;
+    /* 80% of the viewport width */
+    height: 400px;
+    /* Fixed height in pixels */
+    margin: 20px auto;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Box with pixel-based width & height */
+
+.box-pixel {
+    width: 300px;
+    /* Fixed width */
+    height: 150px;
+    /* Fixed height */
+    background-color: lightblue;
+    margin: 20px auto;
+    line-height: 150px;
+    font-weight: bold;
+}
+
+
+/* Box with percentage-based width & height */
+
+.box-percentage {
+    width: 50%;
+    /* 50% of the parent container */
+    height: 50%;
+    /* 50% of the parent container */
+    background-color: lightgreen;
+    margin: auto;
+    line-height: 100px;
+    font-weight: bold;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Attribute Demo</title>
+</head>
+
+<body>
+    <h2>Target Attribute in Hyperlinks</h2>
+    <ul>
+        <li><a href="https://www.google.com" target="_blank">Open Google in a New Tab</a></li>
+        <li><a href="https://www.wikipedia.org" target="_self">Open Wikipedia in the Same Tab</a></li>
+        <li><a href="https://www.example.com" target="_parent">Open Example in Parent Frame</a></li>
+        <li><a href="https://www.github.com" target="_top">Open GitHub in Full Window</a></li>
+    </ul>
+
+    <h2>Target Attribute in Forms</h2>
+    <form action="https://www.example.com/search" method="get" target="_blank">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="q" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Embedded Iframe</h2>
+    <iframe src="https://www.wikipedia.org" width="600" height="400" style="border:1px solid black;"></iframe>
+
+    <h2>Scrolling Marquee</h2>
+    <marquee behavior="scroll" direction="left" style="font-size: 20px; color: blue;">Welcome to the Target Attribute Demo Page!</marquee>
+</body>
+
+</html>

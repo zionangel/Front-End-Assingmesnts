@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Handling</title>
+</head>
+
+<body>
+
+    <h2>JavaScript Cookies Example</h2>
+    <button onclick="setCookie('username', 'Zion', 1)">Set Cookie</button>
+    <button onclick="alert('Cookie Value: ' + getCookie('username'))">Get Cookie</button>
+    <button onclick="checkCookie()">Check Cookie</button>
+
+    <script>
+        // Function to Set a Cookie
+        function setCookie(name, value, days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+            alert("Cookie Set: " + name + "=" + value);
+        }
+
+        // Function to Get a Cookie Value
+        function getCookie(name) {
+            let decodedCookies = decodeURIComponent(document.cookie);
+            let cookiesArray = decodedCookies.split(';');
+            for (let i = 0; i < cookiesArray.length; i++) {
+                let cookie = cookiesArray[i].trim();
+                if (cookie.startsWith(name + "=")) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return "";
+        }
+
+        // Function to Check if a Cookie Exists
+        function checkCookie() {
+            let username = getCookie("username");
+            if (username !== "") {
+                alert("Welcome back, " + username + "!");
+            } else {
+                alert("No cookie found! Set a cookie first.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

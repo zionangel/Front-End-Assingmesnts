@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Fetch MySQL Data</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="UserController">
+
+    <h2>User Data from MySQL</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr ng-repeat="user in users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("UserController", function($scope, $http) {
+            $http.get("http://localhost:3000/api/users") // Fetch from backend API
+                .then(function(response) {
+                    $scope.users = response.data;
+                })
+                .catch(function(error) {
+                    console.error("Error fetching data:", error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

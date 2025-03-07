@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Navigation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        h1,
+        h2 {
+            color: darkblue;
+        }
+        
+        p {
+            font-size: 18px;
+            color: darkred;
+        }
+        
+        .section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            border: 1px solid gray;
+        }
+        /* Style for navigation links */
+        
+        .top-link {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Links -->
+    <h1>Welcome to My Web Page</h1>
+    <p>Use the links below to navigate within the page:</p>
+    <ul>
+        <li><a href="#about">Go to About Section</a></li>
+        <li><a href="#services">Go to Services Section</a></li>
+        <li><a href="#contact">Go to Contact Section</a></li>
+    </ul>
+
+    <!-- About Section -->
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>This is the about section of the page.</p>
+        <a href="#top" class="top-link">Back to Top</a>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="section">
+        <h2>Our Services</h2>
+        <p>Here are some of the services we provide.</p>
+        <a href="#top" class="top-link">Back to Top</a>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: contact@example.com</p>
+        <a href="#top" class="top-link">Back to Top</a>
+    </div>
+
+</body>
+
+</html>

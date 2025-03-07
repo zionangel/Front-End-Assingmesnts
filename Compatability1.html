@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Table Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .fixed-table {
+            table-layout: fixed;
+        }
+        
+        .auto-table {
+            table-layout: auto;
+            /* Default (none) */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Table with <code>table-layout: fixed</code></h2>
+    <table class="fixed-table">
+        <tr>
+            <th style="width: 100px;">ID</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>1234 Long Street Name That Extends</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>5678 Another Very Long Address Example</td>
+        </tr>
+    </table>
+
+    <h2>Table with <code>table-layout: auto (none)</code></h2>
+    <table class="auto-table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>1234 Long Street Name That Extends</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>5678 Another Very Long Address Example</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

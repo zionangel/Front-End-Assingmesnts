@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS with CSS Positions, Animations & Pagination</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 50px;
+        }
+        /* Dropdown Styling */
+        
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Image Box with Animation */
+        
+        .image-box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+        /* Hover Effect */
+        
+        .image-box:hover {
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5);
+            animation: scaleUp 0.5s ease-in-out forwards;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Keyframe Animations */
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        /* Pagination Styling */
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pagination li {
+            padding: 10px 15px;
+            margin: 5px;
+            background: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        /* Hoverable Pagination */
+        
+        .pagination li:hover {
+            background: #007bff;
+            color: white;
+        }
+        /* Pagination Without Spaces */
+        
+        .pagination-no-space li {
+            margin: 0;
+        }
+        /* CSS Positioning */
+        /* Static Position */
+        
+        .static-box {
+            position: static;
+            background: lightgray;
+            padding: 10px;
+            margin: 10px;
+        }
+        /* Relative Position */
+        
+        .relative-box {
+            position: relative;
+            left: 20px;
+            background: lightblue;
+            padding: 10px;
+            margin: 10px;
+        }
+        /* Fixed Position */
+        
+        .fixed-box {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: tomato;
+            padding: 10px;
+            color: white;
+        }
+        /* Absolute Position */
+        
+        .absolute-box {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: yellow;
+            padding: 10px;
+        }
+        /* Sticky Position */
+        
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background: green;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="MainController">
+
+    <h2>Using ng-options</h2>
+    <select ng-model="selectedOption1" ng-options="item for item in options">
+        <option value="">-- Select an Option --</option>
+    </select>
+    <p>Selected Value: {{ selectedOption1 }}</p>
+
+    <h2>Using ng-repeat</h2>
+    <select ng-model="selectedOption2">
+        <option value="">-- Select an Option --</option>
+        <option ng-repeat="item in options" value="{{ item }}">{{ item }}</option>
+    </select>
+    <p>Selected Value: {{ selectedOption2 }}</p>
+
+    <!-- Image Box with Hover & Animation -->
+    <div class="image-box">
+        <img src="https://source.unsplash.com/200x200/?nature,water" alt="Sample Image">
+    </div>
+
+    <!-- Pagination with Hover -->
+    <ul class="pagination">
+        <li ng-repeat="page in pages">{{ page }}</li>
+    </ul>
+
+    <!-- Pagination Without Spaces -->
+    <ul class="pagination pagination-no-space">
+        <li ng-repeat="page in pages">{{ page }}</li>
+    </ul>
+
+    <!-- CSS Positioning Examples -->
+    <h2>CSS Positioning Examples</h2>
+
+    <div class="static-box">Static Position (Default)</div>
+    <div class="relative-box">Relative Position (Moves 20px Right)</div>
+    <div class="fixed-box">Fixed Position (Stays at Top-Right)</div>
+    <div class="absolute-box">Absolute Position (Centered)</div>
+    <div class="sticky-box">Sticky Position (Sticks at Top when Scrolling)</div>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("MainController", function($scope) {
+            $scope.options = ["Apple", "Banana", "Cherry", "Mango"];
+            $scope.pages = [1, 2, 3, 4, 5];
+        });
+    </script>
+
+</body>
+
+</html>

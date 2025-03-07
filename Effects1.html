@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Select Example with CSS Effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 50px;
+        }
+        /* Styling for the dropdown */
+        
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Image box with shadow */
+        
+        .image-box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        /* Hover effect for shadow */
+        
+        .image-box:hover {
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="MainController">
+
+    <h2>Using ng-options</h2>
+    <select ng-model="selectedOption1" ng-options="item for item in options">
+        <option value="">-- Select an Option --</option>
+    </select>
+    <p>Selected Value: {{ selectedOption1 }}</p>
+
+    <h2>Using ng-repeat</h2>
+    <select ng-model="selectedOption2">
+        <option value="">-- Select an Option --</option>
+        <option ng-repeat="item in options" value="{{ item }}">{{ item }}</option>
+    </select>
+    <p>Selected Value: {{ selectedOption2 }}</p>
+
+    <!-- Image Box with Hover Effect -->
+    <div class="image-box">
+        <img src="https://source.unsplash.com/200x200/?nature,water" alt="Sample Image">
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("MainController", function($scope) {
+            $scope.options = ["Apple", "Banana", "Cherry", "Mango"];
+        });
+    </script>
+
+</body>
+
+</html>

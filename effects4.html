@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Features</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        select,
+        .box,
+        .pagination li {
+            margin: 10px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background: lightgray;
+            box-shadow: 2px 2px 10px gray;
+        }
+        
+        .box:hover {
+            box-shadow: 4px 4px 15px black;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .pagination li {
+            padding: 10px;
+            background: #ddd;
+            border: 1px solid #999;
+        }
+        
+        .pagination li:hover {
+            background: blue;
+            color: white;
+        }
+        
+        .overflow {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+        
+        .static {
+            position: static;
+        }
+        
+        .relative {
+            position: relative;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <h3>Dropdown with ng-options</h3>
+    <select ng-model="selected" ng-options="item for item in items">
+        <option value="">-- Select --</option>
+    </select>
+    <p>Selected: {{ selected }}</p>
+
+    <h3>Dropdown with ng-repeat</h3>
+    <select ng-model="selected2">
+        <option value="">-- Select --</option>
+        <option ng-repeat="item in items">{{ item }}</option>
+    </select>
+    <p>Selected: {{ selected2 }}</p>
+
+    <div class="box">Hover Me</div>
+
+    <h3>Pagination</h3>
+    <ul class="pagination">
+        <li ng-repeat="p in pages">{{ p }}</li>
+    </ul>
+
+    <h3>Overflow Handling</h3>
+    <div class="overflow">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+
+    <h3>CSS Positions</h3>
+    <div class="static">Static Position</div>
+    <div class="relative">Relative Position</div>
+
+    <script>
+        angular.module("myApp", []).controller("MainCtrl", function($scope) {
+            $scope.items = ["Apple", "Banana", "Mango"];
+            $scope.pages = [1, 2, 3, 4, 5];
+        });
+    </script>
+
+</body>
+
+</html>

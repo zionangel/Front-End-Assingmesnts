@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS List Style Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .circle-list {
+            list-style-type: circle;
+        }
+        
+        .square-list {
+            list-style-type: square;
+        }
+        
+        .decimal-list {
+            list-style-type: decimal;
+        }
+        
+        .roman-list {
+            list-style-type: upper-roman;
+        }
+        
+        .none-list {
+            list-style-type: none;
+            /* Removes bullet points */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>List with Different `list-style-type`</h2>
+
+    <h3>● Circle Bullets</h3>
+    <ul class="circle-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h3>■ Square Bullets</h3>
+    <ul class="square-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h3>1. Decimal Numbers</h3>
+    <ol class="decimal-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <h3>I. Roman Numerals</h3>
+    <ol class="roman-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <h3>No Bullet/Number</h3>
+    <ul class="none-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+</body>
+
+</html>

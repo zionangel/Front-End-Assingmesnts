@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS ng-show/ng-hide Animation</title>
+
+    <!-- Include AngularJS & Angular Animate -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        /* Animation for ng-show */
+        
+        .fade-animation.ng-hide {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .fade-animation {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body ng-controller="myController">
+
+    <h2>📌 AngularJS ng-show/ng-hide Animation</h2>
+
+    <!-- Toggle Button -->
+    <button ng-click="isVisible = !isVisible">Toggle Box</button>
+
+    <!-- Animated Box using ng-show -->
+    <div class="box fade-animation" ng-show="isVisible">
+        Hello World!
+    </div>
+
+    <script>
+        var app = angular.module("myApp", ["ngAnimate"]);
+
+        app.controller("myController", function($scope) {
+            $scope.isVisible = true; // Initially visible
+        });
+    </script>
+
+</body>
+
+</html>
